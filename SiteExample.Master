@@ -1,0 +1,173 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteExample.master.cs" Inherits="MasterPageExample.SiteExample" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 99%;
+            height: 416px;
+            margin-bottom: 0px;
+
+      
+        }
+        .auto-style2 {
+            width: 890px;
+            height: 10px;
+
+             background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-color: white;
+            border: double;
+            border-radius:10px;
+            padding: 10px;
+            margin: 10px;
+        }
+        .auto-style3 {
+            height: 10px;
+             background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-color: white;
+            border: double;
+            border-radius:10px;
+            padding: 10px;
+            margin: 10px;
+        }
+        .auto-style4 {
+            height: 293px;
+            
+             background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-color: white;
+            border: double;
+            border-radius:10px;
+            padding: 10px;
+            margin: 10px;
+        }
+        .auto-style5 {
+            width: 890px;
+            height: 293px;
+        }
+        .auto-style6 {
+            height: 37px;
+             background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-color: white;
+            border: double;
+            border-radius:10px;
+            padding: 10px;
+            margin: 10px;
+        }
+        .auto-style7 {
+            width: 890px;
+            height: 37px;
+
+             background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-color: white;
+            border: double;
+            border-radius:10px;
+            padding: 10px;
+            margin: 10px;
+        }
+        .auto-style8 {
+            margin-top: 0px;
+            color:white;
+            font-weight: bold;
+            font-size: x-large;
+        }
+        .fit-picture{
+            width:150px;
+        }
+        .nav{
+            padding:20px;
+            margin:20px;
+        }
+        .auto-style9 {
+            width: 123px;
+            height: 63px;
+        }
+        form{
+            padding: 3em 0;
+   background: url(../images/pexels-fauxels-3184450.jpg) 0 0 no-repeat;
+
+	background-attachment:fixed;
+	background-size:cover;
+        }
+        .auto-style10 {
+            font-size: x-large;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+        .auto-style11 {
+            font-weight: bold;
+            font-size: x-large;
+        }
+        </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img class="auto-style9" src="/images/logo-shopify.png" alt="Grapefruit slice atop a pile of other slices"></a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="btn btn-success" href="https://localhost:44389/WebForm1.aspx">&nbsp;Article</a>
+      </li>
+      <li class="nav-item">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="btn btn-warning" href="https://localhost:44389/WebForm2.aspx">Commend</a>
+      </li>
+      <li class="nav-item">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="btn btn-danger" href="https://localhost:44389/WebForm3.aspx">&nbsp;Catégorie</a></li>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <form id="form1" runat="server">
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style6" aria-orientation="horizontal">&nbsp;&nbsp;&nbsp; <span class="auto-style10">&nbsp;Menu</span>&nbsp;</td>
+                <td class="auto-style7">
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" : " CssClass="auto-style11">
+                        <CurrentNodeStyle ForeColor="#333333" />
+                        <NodeStyle Font-Bold="True" ForeColor="#990000" />
+                        <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
+                        <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
+                    </asp:SiteMapPath>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" CssClass="auto-style8" Height="16px" Width="236px">
+                    </asp:TreeView>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                </td>
+                <td class="auto-style5">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3"></td>
+                <td class="auto-style2">Gestion Commerciale
+            </tr>
+        </table>
+    </form>
+   
+</body>
+</html>

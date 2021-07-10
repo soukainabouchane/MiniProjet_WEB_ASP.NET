@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="gestion" Class="DCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\gestion.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="gestionConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.categorie" Member="categorie">
+    <Type Name="categorie">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nom_categorie" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="descrption" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="categorie_articles" Member="articles" ThisKey="Id" OtherKey="categorie_id" Type="articles" />
+    </Type>
+  </Table>
+  <Table Name="dbo.articles" Member="articles">
+    <Type Name="articles">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom_article" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="prix_unitaire" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descreption" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="categorie_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="articles_commande" Member="commande" ThisKey="Id" OtherKey="article_id" Type="commande" />
+      <Association Name="categorie_articles" Member="categorie" ThisKey="categorie_id" OtherKey="Id" Type="categorie" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.commande" Member="commande">
+    <Type Name="commande">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom_commande" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="quantite_article" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_commande" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="article_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="articles_commande" Member="articles" ThisKey="article_id" OtherKey="Id" Type="articles" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.t_user" Member="t_user">
+    <Type Name="t_user">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="pwd" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
